@@ -496,7 +496,10 @@
     @media (max-width: 620px) {
       .app { width: min(100% - 14px, 1040px); padding-top: 10px; }
       .hero { border-radius: 24px; }
-      .scale { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      /* Keep all five choices on one row, including narrow phones. */
+      .scale { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; }
+      .scale .option { min-width: 0; }
+      .scale .option span { min-height: 46px; padding: 6px 2px; font-size: 16px; }
       .section-card { padding: 20px; }
       .nav-row { flex-direction: column-reverse; }
       .nav-row button { width: 100%; }
